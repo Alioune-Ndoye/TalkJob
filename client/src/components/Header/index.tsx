@@ -27,29 +27,19 @@ const Header = () => {
           <p className="m-0">Find tech jobs and share your thoughts about them.</p>
         </div>
         
-        <div className="search-container my-2">
-          <input
-            type="text"
-            placeholder="Search for jobs..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="p-2 rounded mr-2"
-          />
-          <button 
-            className="btn btn-info" 
-            onClick={handleSearch}
-          >
-            Search
-          </button>
-        </div>
+       
         
         <nav className="flex-row">
         
           
           {Auth.loggedIn() ? (
             <>
+           
               <Link className="btn btn-info m-2" to="/me">
                 {Auth.getProfile().data.username}'s profile
+              </Link>
+              <Link className="btn btn-light m-2" to="/search-jobs">
+                Search for Jobs
               </Link>
               <Link className="btn btn-light m-2" to="/saved-jobs">
                 Saved Jobs
