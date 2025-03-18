@@ -1,5 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import AdzunaJobSearch from "../components/SearchForm";
+import ThoughtForm from '../components/ThoughtForm';
 
 // Define the job type (you might want to move this to a types file)
 interface AdzunaJob {
@@ -22,6 +23,9 @@ const JobResultsPage = () => {
 
   return (
     <div className="container py-4">
+        <div className="mb-6">
+          <ThoughtForm />
+        </div>
       <h1 className="mb-4">Job Results</h1>
       
       {/* Keep the search form if you want users to search again */}
