@@ -1,6 +1,5 @@
-import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-
+import ReactDOM from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import App from './App.jsx';
 import Home from './pages/Home';
@@ -9,34 +8,44 @@ import Login from './pages/Login';
 import SingleThought from './pages/SingleThought';
 import Profile from './pages/Profile';
 import ErrorPage from './pages/Error';
+import JobResultsPage from './pages/JobResultsPage'; // Import the missing page
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
       {
         index: true,
         element: <Home />
-      }, {
+      },
+      {
         path: '/login',
         element: <Login />
-      }, {
+      },
+      {
         path: '/signup',
         element: <Signup />
-      }, {
+      },
+      {
         path: '/profiles/:username',
         element: <Profile />
-      }, {
+      },
+      {
         path: '/me',
         element: <Profile />
-      }, {
+      },
+      {
         path: '/thoughts/:thoughtId',
         element: <SingleThought />
+      },
+      {
+        path: '/job-results', // Add the missing route
+        element: <JobResultsPage />
       }
     ]
-  },
+  }
 ]);
 
 const rootElement = document.getElementById('root');

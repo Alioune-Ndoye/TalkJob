@@ -1,8 +1,6 @@
 import { useQuery } from '@apollo/client';
-
 import ThoughtList from '../components/ThoughtList/index.tsx';
 import ThoughtForm from '../components/ThoughtForm/index.tsx';
-
 import { QUERY_THOUGHTS } from '../utils/queries.ts';
 
 const Home = () => {
@@ -10,22 +8,22 @@ const Home = () => {
   const thoughts = data?.thoughts || [];
 
   return (
-    <main>
-      <div className="flex-row justify-center">
-        <div
-          className="col-12 col-md-10 mb-3 p-3"
-          style={{ border: '1px dotted #1a1a1a' }}
-        >
+    <main className="flex justify-center items-center min-h-screen bg-gray-100">
+      {/* Container for centering */}
+      <div className="container mx-auto max-w-4xl p-6 bg-white shadow-lg rounded-lg">
+        <h2 className="text-center text-2xl font-bold mb-4">Welcome to CareerLink</h2>
+
+        {/* Thought Form */}
+        <div className="mb-6">
           <ThoughtForm />
         </div>
-        <div className="col-12 col-md-8 mb-3">
+
+        {/* Thought List */}
+        <div>
           {loading ? (
-            <div>Loading...</div>
+            <div className="text-center text-gray-500">Loading...</div>
           ) : (
-            <ThoughtList
-              thoughts={thoughts}
-              title="Some Feed for Thought(s)..."
-            />
+            <ThoughtList thoughts={thoughts} title="Some Feed for Thought(s)..." />
           )}
         </div>
       </div>
