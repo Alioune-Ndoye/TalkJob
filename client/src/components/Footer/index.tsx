@@ -23,18 +23,11 @@ const Footer: React.FC = () => {
             &larr; Go Back
           </button>
         )}
-        <h4>
-          Made with{' '}
-          <span
-            className="emoji"
-            role="img"
-            aria-label="heart"
-            aria-hidden="false"
-          >
-            ❤️
-          </span>{' '}
-          by the Tech Thoughts team.
-        </h4>
+        
+        <div className="mt-3">
+          <p className="text-strong mb-0">Final Project Authors: Harry, Ali, Dan</p>
+          <p className="text-strong small">© {new Date().getFullYear()} Tech Job Thoughts. All rights reserved.</p>
+        </div>
       </div>
     </footer>
   );
