@@ -44,12 +44,7 @@ const Header = () => {
         </div>
         
         <nav className="flex-row">
-          <Link className="text-light mx-2" to="/jobs">
-            Browse Jobs
-          </Link>
-          <Link className="text-light mx-2" to="/thoughts">
-            Community Thoughts
-          </Link>
+        
           
           {Auth.loggedIn() ? (
             <>
